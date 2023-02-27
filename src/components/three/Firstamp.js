@@ -22,7 +22,7 @@ import blackPlasticNormalMap from '../../assets/images/materials/normalmaps/blac
 
 // script
 export function Firstamp(props) {
-  const { nodes, materials } = useGLTF('/firstamp.glb')
+  const { nodes } = useGLTF('/firstamp.glb')
   // loader 
   const alu = useTexture({
     map: aluMap,
