@@ -10,8 +10,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App/>}/>
-        <Route path="/three" element={<ThreeContainer/>}/>
+        <Route path="/sigma" element={<App/>}/>
+        <Route path="/" element={<ThreeContainer/>}/>
       </Routes>
     </BrowserRouter>
     {/* <App/> */}
