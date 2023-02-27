@@ -7,11 +7,12 @@ import { BroswerRouter, Routes, Route } from "react-router-dom"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BroswerRouter>
+    {/* <BroswerRouter>
       <Routes>
         <Route path="/" element={<App/>}/>
       </Routes>
-    </BroswerRouter>
+    </BroswerRouter> */}
+    <App/>
   </React.StrictMode>
 );
 
