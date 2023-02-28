@@ -21,7 +21,7 @@ function Cosmos() {
               linkDistance: 1000,
               linkSpring: 2,
               repulsion: 0.2,
-              gravity: 0.1,
+              gravity: 0.11,
               decay: 100
             },
         }
