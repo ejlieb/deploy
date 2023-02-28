@@ -8,7 +8,7 @@ function Cosmos() {
 
     useEffect(() => {
         const config = {
-            backgroundColor: "#151515",
+            backgroundColor: "#aaaaaa",
             nodeSize: 2,
             width: 100,
             nodeColor: "#4B5BBF",
