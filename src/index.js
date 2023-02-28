@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ThreeContainer from './pages/ThreeContainer';
+import Cosmos from './pages/Cosmos';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ root.render(
       <Routes>
         <Route path="/sigma" element={<App/>}/>
         <Route path="/" element={<ThreeContainer/>}/>
+        <Route path="/cosmos" element={<Cosmos/>}/>
       </Routes>
     </BrowserRouter>
     {/* <App/> */}
