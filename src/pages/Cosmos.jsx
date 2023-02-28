@@ -38,9 +38,10 @@ function Cosmos() {
             links.push({ source: i.source, target: i.target }) 
         })
         const graph = new Graph(target.current, config);
+        graph.setZoomLevel(10,[0])
+
         graph.setData(nodes, links);
         // graph.step(0);
-        graph.setZoomLevel(10,[0])
     },[]);
 
 
