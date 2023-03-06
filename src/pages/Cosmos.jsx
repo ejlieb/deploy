@@ -24,6 +24,12 @@ function Cosmos() {
               gravity: 0.11,
               decay: 100
             },
+            onclick: (f,s,t,l) => {
+                console.log(f)
+                console.log(s)
+                console.log(t)
+                console.log(l)
+            }
         }
         console.log(target.current);
         console.log(data.nodes)
@@ -37,6 +43,7 @@ function Cosmos() {
         data.edges.forEach(function(i) {
             links.push({ source: i.source, target: i.target }) 
         })
+        
         const graph = new Graph(target.current, config);
         graph.setZoomLevel(10,[0])
 
