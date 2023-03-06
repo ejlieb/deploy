@@ -14,7 +14,7 @@ function Cosmos() {
             nodeColor: "#4B5BBF",
             nodeGreyoutOpacity: 0.1,
             linkWidth: 0.1,
-            linkColor: "#5F74C2",
+            linkColor: "black",
             linkArrows: false,
             linkGreyoutOpacity: 0,
             simulation: {
@@ -22,18 +22,20 @@ function Cosmos() {
               linkSpring: 2,
               repulsion: 0.2,
               gravity: 0.11,
-              decay: 100
+              decay: 300
             },
-            onclick: (f,s,t,l) => {
-                console.log(f)
-                console.log(s)
-                console.log(t)
-                console.log(l)
+            events: {
+                onClick: (f,s,t,l) => {
+                    graph.selectNodeById(f.id, true)
+
+                },
+                onMouseMove: (f) =>  {
+                    graph.selectNodeById(f.id, true)
+
+                }
             }
+
         }
-        console.log(target.current);
-        console.log(data.nodes)
-        console.log(data.edges)
         let nodes = []
         let links = []
         data.nodes.forEach(function(i){
@@ -45,7 +47,7 @@ function Cosmos() {
         })
         
         const graph = new Graph(target.current, config);
-        graph.setZoomLevel(10,[0])
+        graph.setZoomLevel(3,[0])
 
         graph.setData(nodes, links);
         // graph.step(0);
