@@ -29,20 +29,24 @@ const LoadGraphWithHook = () => {
     const registerEvent = useRegisterEvents();
     useEffect(() => {
       registerEvent({
+
         enterNode: (e) => {
           if (!toggle) {
+
             sigma.getGraph().nodes().forEach((node) => {
-              if (!sigma.getGraph().neighbors(e.node).includes(node) && node != e.node){
+              if (!sigma.getGraph().neighbors(e.node).includes(node) && node !== e.node){
                 sigma.getGraph().setNodeAttribute(node, "hidden", true)
               }
             })
+
           }
         },
 
         leaveNode: (e) => {
           sigma.getGraph().nodes().forEach((node) => {
             if (!toggle) {
-              if (!sigma.getGraph().neighbors(e.node).includes(node) && node != e.node){
+
+              if (!sigma.getGraph().neighbors(e.node).includes(node) && node !== e.node){
                 sigma.getGraph().setNodeAttribute(node, "hidden", false)
               }
             }
@@ -51,10 +55,10 @@ const LoadGraphWithHook = () => {
 
         clickNode: (e) => {
             if (toggle) {
-              if (target == e.node ) {
+              if (target === e.node ) {
 
                 sigma.getGraph().nodes().forEach((node) => {
-                  if (!sigma.getGraph().neighbors(e.node).includes(node) && node != e.node){
+                  if (!sigma.getGraph().neighbors(e.node).includes(node) && node !== e.node){
                     sigma.getGraph().setNodeAttribute(node, "hidden", false)
                   }
                 })
@@ -66,7 +70,7 @@ const LoadGraphWithHook = () => {
               else {
 
                 sigma.getGraph().nodes().forEach((node) => {
-                  if (!sigma.getGraph().neighbors(e.node).includes(node) && node != e.node){
+                  if (!sigma.getGraph().neighbors(e.node).includes(node) && node !== e.node){
                     sigma.getGraph().setNodeAttribute(node, "hidden", true)
                   }
                   else {
@@ -81,7 +85,7 @@ const LoadGraphWithHook = () => {
             }
             else {
               sigma.getGraph().nodes().forEach((node) => {
-                if (!sigma.getGraph().neighbors(e.node).includes(node) && node != e.node){
+                if (!sigma.getGraph().neighbors(e.node).includes(node) && node !== e.node){
                   sigma.getGraph().setNodeAttribute(node, "hidden", true)
                 }
               })
