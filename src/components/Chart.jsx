@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "@react-sigma/core/lib/react-sigma.min.css";
-import {Graph } from "graphology";
+import { Graph } from "graphology";
 import { SigmaContainer, useLoadGraph, useRegisterEvents, useSigma } from "@react-sigma/core";
 import data from "../data/data.json"
 
@@ -95,7 +95,7 @@ const LoadGraphWithHook = () => {
 
         }
       })
-    },[registerEvent])
+    },[registerEvent,sigma])
   }
 
   return (
