@@ -12,14 +12,13 @@ const LoadGraphWithHook = () => {
     const loadGraph = useLoadGraph();
 
     useEffect(() => {
-      // Create the graph
       const graph = new Graph();
-    //   graph.addNode("A", { x: 0, y: 0, label: "Node A", size: 10 });
-    //   graph.addNode("B", { x: 1, y: 1, label: "Node B", size: 10 });
-    //   graph.addEdgeWithKey("rel1", "A", "B", { label: "REL_1" });
-    graph.import(data)
-      loadGraph(graph);
-    }, [loadGraph]);
+      //   graph.addNode("A", { x: 0, y: 0, label: "Node A", size: 10 });
+      //   graph.addNode("B", { x: 1, y: 1, label: "Node B", size: 10 });
+      //   graph.addEdgeWithKey("rel1", "A", "B", { label: "REL_1" });
+      graph.import(data)
+        loadGraph(graph);
+      }, [loadGraph]);
 
     return null;
   };
@@ -55,6 +54,7 @@ const LoadGraphWithHook = () => {
 
         clickNode: (e) => {
             if (toggle) {
+              
               if (target === e.node ) {
 
                 sigma.getGraph().nodes().forEach((node) => {
@@ -62,6 +62,7 @@ const LoadGraphWithHook = () => {
                     sigma.getGraph().setNodeAttribute(node, "hidden", false)
                   }
                 })
+                sigma.getGraph().setNodeAttribute(e.node,"highlighted",false);
                 setTarget("");
                 setToggle(!toggle);
 
@@ -77,6 +78,8 @@ const LoadGraphWithHook = () => {
                     sigma.getGraph().setNodeAttribute(node, "hidden", false)
                   }
                 })
+                sigma.getGraph().setNodeAttribute(target,"highlighted",false);
+                sigma.getGraph().setNodeAttribute(e.node,"highlighted",true);
                 setTarget(e.node);
 
               }
@@ -84,6 +87,7 @@ const LoadGraphWithHook = () => {
 
             }
             else {
+              sigma.getGraph().setNodeAttribute(e.node,"highlighted",true);
               sigma.getGraph().nodes().forEach((node) => {
                 if (!sigma.getGraph().neighbors(e.node).includes(node) && node !== e.node){
                   sigma.getGraph().setNodeAttribute(node, "hidden", true)
