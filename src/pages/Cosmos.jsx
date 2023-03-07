@@ -29,10 +29,6 @@ function Cosmos() {
                     graph.selectNodeById(f.id, true)
 
                 },
-                onMouseMove: (f) =>  {
-                    graph.selectNodeById(f.id, true)
-
-                }
             }
 
         }
