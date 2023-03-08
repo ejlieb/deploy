@@ -37,6 +37,17 @@
   }
 }
 
+.container {
+  display: flex;
+
+}
+
 canvas {
   right: 0vw;
+}
+
+#sigma-container {
+  width: 50%;
+  margin: 10px;
+  
 }
