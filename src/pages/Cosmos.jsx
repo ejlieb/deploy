@@ -52,6 +52,7 @@ function Cosmos() {
 
     return (
         <div>
+            <span>content</span>
             <canvas ref={target}>
 
             </canvas>
